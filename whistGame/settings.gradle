@@ -1,0 +1,8 @@
+rootProject.name = 'whistGame'
+include 'Model'
+include 'Persistance'
+include 'Networking'
+include 'Services'
+include 'Server'
+include 'ClientDesktop'
+

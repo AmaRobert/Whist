@@ -1,0 +1,1 @@
+This project is used for handling all network stuff(Proxy pattern, Conccurent Server implementation, DTO)

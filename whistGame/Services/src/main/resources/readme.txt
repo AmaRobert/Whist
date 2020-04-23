@@ -1,0 +1,1 @@
+This project is used for service interfaces ONLY(!!NOT IMPLEMENTATION)
