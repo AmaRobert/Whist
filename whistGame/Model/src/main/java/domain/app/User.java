@@ -1,6 +1,6 @@
-package domain.app;
+package Domain.App;
 
-import domain.Entity;
+import Domain.Entity;
 
 public class User extends Entity<String> {
 
@@ -42,3 +42,4 @@ public class User extends Entity<String> {
 
     public void setUsername(String username){this.id = username;}
 }
+

@@ -1,1 +1,0 @@
-This project is based on developing the desktop version for our game
