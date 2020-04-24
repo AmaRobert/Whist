@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e3b67a4-9eea-4225-bae2-635268e5477f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientDesktop/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ClientDesktop/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Model/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Networking/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Networking/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistance/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistance/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Server/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/src/main/resources/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Services/readme.txt" afterDir="false" />
-    </list>
+    <list default="true" id="6e3b67a4-9eea-4225-bae2-635268e5477f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,29 +21,11 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="ProjectId" id="1awJDBzHTBTHKi2RqYFWiopXGpl" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="11.0.4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\GitProjects\Whist\whistGame\Services" />
-      <recent name="C:\GitProjects\Whist\whistGame\Server" />
-      <recent name="C:\GitProjects\Whist\whistGame\Persistance" />
-      <recent name="C:\GitProjects\Whist\whistGame\Networking" />
-      <recent name="C:\GitProjects\Whist\whistGame\Model" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -79,22 +50,10 @@
       <option name="presentableId" value="Default" />
       <updated>1587640601014</updated>
       <workItem from="1587640605048" duration="1578000" />
-      <workItem from="1587642930314" duration="97000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
