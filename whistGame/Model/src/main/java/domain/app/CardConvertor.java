@@ -1,4 +1,4 @@
-package main.java.domain.app;
+package domain.app;
 
 public class CardConvertor {
 

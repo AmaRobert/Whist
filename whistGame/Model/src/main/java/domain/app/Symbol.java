@@ -1,4 +1,4 @@
-package main.java.domain.app;
+package domain.app;
 
 public enum Symbol {
     Hearts, Spades, Clubs, Diamonds
