@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="domain.game.DeckTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-24T16:34:49" hostname="DESKTOP-S7MNNQO" time="0.004">
+<testsuite name="domain.game.DeckTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-24T17:09:53" hostname="DESKTOP-S7MNNQO" time="0.003">
   <properties/>
-  <testcase name="generateCards" classname="domain.game.DeckTest" time="0.004"/>
+  <testcase name="generateCards" classname="domain.game.DeckTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
