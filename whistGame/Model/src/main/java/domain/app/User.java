@@ -1,6 +1,6 @@
-package Domain.App;
+package domain.app;
 
-import Domain.Entity;
+import domain.Entity;
 
 public class User extends Entity<String> {
 

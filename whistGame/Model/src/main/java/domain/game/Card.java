@@ -1,4 +1,4 @@
-package Domain.Game;
+package domain.game;
 
 public class Card implements Comparable<Card> {  // nu cred ca trebuie sa extinda Entity
 

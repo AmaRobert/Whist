@@ -1,4 +1,4 @@
-package Domain.App;
+package domain.app;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 public class Entity<ID> {
     protected ID id;
