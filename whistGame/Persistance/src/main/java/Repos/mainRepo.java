@@ -25,7 +25,7 @@ public class mainRepo {
        // User uFound = fur.findByName("Mihai");
         User uFound = fur.findByName("Odrin");
         //User uFound = fur.findByName("Robert");
-        System.out.println( "testFindByName : " +  uFound.getNickname() + " " + uFound.getPassword());
+        System.out.println( "testFindByName : " +  uFound.getId() + " " + uFound.getPassword());
     }
 
     public static void testUpdateUser(){
@@ -45,10 +45,10 @@ public class mainRepo {
 
     public static void main(String[] args) {
 
-        //testSaveUser();
-        //testFindUserByName();
-        //estUpdateUser();
-        testSaveRoom();
+        testSaveUser();
+        testFindUserByName();
+        //testUpdateUser();
+        //testSaveRoom();
 
     }
 }

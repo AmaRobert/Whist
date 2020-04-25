@@ -1,3 +1,4 @@
+
 package domain.game;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 public class main {
 
     public static void deckTest(){
+
         Deck deck = new Deck(16);
         List<Card> cards = deck.generateCards();
         for (Card card: cards){
@@ -14,7 +16,9 @@ public class main {
         }
     }
 
+
     public static void main(String[] args) {
       deckTest();
     }
+
 }
