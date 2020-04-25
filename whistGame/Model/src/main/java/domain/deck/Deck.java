@@ -1,4 +1,4 @@
-package Domain.Game;
+package domain.Game;
 
 import java.util.ArrayList;
 import java.util.Collections;

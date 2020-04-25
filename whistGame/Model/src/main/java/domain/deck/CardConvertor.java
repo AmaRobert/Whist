@@ -1,4 +1,4 @@
-package Domain.Game;
+package domain.Game;
 
 public class CardConvertor {
 
