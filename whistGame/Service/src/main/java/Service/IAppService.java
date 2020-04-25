@@ -1,6 +1,7 @@
 package Service;
 
-import Domain.App.User;
+
+import domain.app.User;
 
 public interface IAppService {
     void logIn(User user, IAppObserver client);
