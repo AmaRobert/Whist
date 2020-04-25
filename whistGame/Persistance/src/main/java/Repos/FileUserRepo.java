@@ -2,7 +2,6 @@ package Repos;
 
 import Interface.IUserRepo;
 import domain.app.User;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -25,7 +24,7 @@ public class FileUserRepo implements IUserRepo {
                 if(line.contains(userName)) {
                     split = line.split("\\s");
                     foundUser = new User(split[0], split[1]);
-                    System.out.println(foundUser.getNickname() + " " + foundUser.getPassword());
+                    System.out.println(foundUser.getId() + " " + foundUser.getPassword());
                     return foundUser;
                 }
             }
@@ -42,7 +41,7 @@ public class FileUserRepo implements IUserRepo {
             FileWriter fw = new FileWriter(userFile,true); // 'true'-ul face append
             BufferedWriter bw = new BufferedWriter(fw);
 
-            String line =  user.getNickname() + " " + user.getPassword();
+            String line =  user.getId() + " " + user.getPassword()  ;
             bw.newLine();
             bw.write(line);
 
@@ -52,9 +51,9 @@ public class FileUserRepo implements IUserRepo {
         }
     }
 
-    @Override
+    @Override// a nu se folosi dupa update nu crapa da' face cacaturi si nu-s sigur ce (Hudy)
     public void update(String oldUserName,User newUser) {
-        User foundUser = new User("","");
+        User foundUser = new User("",""); // lazy way
         String[] split;
 
         try{
@@ -78,12 +77,12 @@ public class FileUserRepo implements IUserRepo {
                 }
             }
 
-            System.out.println( "UpdateTest : " + foundUser.getNickname() + " " + foundUser.getPassword());
+           // System.out.println( "UpdateTest : " + foundUser.getNickname() + " " + foundUser.getPassword());
             String fileContents = buffer.toString();
             sc.close();
 
-            String oldUsr = foundUser.getNickname() + " " + foundUser.getPassword();
-            String newUsr = newUser.getNickname() + " " + newUser.getPassword() ;
+            String oldUsr = foundUser.getId() + " " + foundUser.getPassword();
+            String newUsr = newUser.getId() + " " + newUser.getPassword() ;
 
             fileContents = fileContents.replaceAll(oldUsr, newUsr);
 
