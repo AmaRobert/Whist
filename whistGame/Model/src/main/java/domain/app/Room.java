@@ -14,14 +14,14 @@ public class Room //extends domain.Entity<> {// tre sa vedem ce ii punem ca ID
 
     //   private GameBoard  gb =  new GameBoard();
 
-    Room(boolean pub, String IP, int port){
+    public Room(boolean pub, String IP, int port){
         this.setPublic(pub);
         this.setPassword("");
         this.setIPadress(IP);
         this.setPort(port);
     }
 
-    Room(boolean pub,String password, String IP, int port){
+    public Room(boolean pub, String password, String IP, int port){
         this.setPublic(pub);
         this.setPassword(password);
         this.setIPadress(IP);
