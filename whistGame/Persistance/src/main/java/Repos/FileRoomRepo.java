@@ -2,7 +2,6 @@ package Repos;
 
 import Interface.IRoomRepo;
 import domain.app.Room;
-import domain.app.User;
 
 import java.io.*;
 
