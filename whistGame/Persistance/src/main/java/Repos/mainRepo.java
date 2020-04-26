@@ -3,9 +3,6 @@ package Repos;
 import domain.app.Room;
 import domain.app.User;
 
-import java.io.*;
-import java.nio.file.Files;
-
 public class mainRepo {
 
     public static void testSaveUser(){
@@ -23,15 +20,32 @@ public class mainRepo {
         User  usr = new User("mihai","1234");
         FileUserRepo fur = new FileUserRepo();
        // User uFound = fur.findByName("Mihai");
-        User uFound = fur.findByName("Odrin");
+        try{
+            User uFound = fur.findByName("Odrinn");
+            System.out.println( "testFindByName : " +  uFound.getId() + " " + uFound.getPassword());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
         //User uFound = fur.findByName("Robert");
-        System.out.println( "testFindByName : " +  uFound.getId() + " " + uFound.getPassword());
+
     }
 
     public static void testUpdateUser(){
         User  newUsr = new User("Hudy","123456789");
         FileUserRepo fur = new FileUserRepo();
         fur.update("mihai",newUsr);
+    }
+
+    public static void testUserExists(){
+
+        User  newUsr = new User("Hudy","123456789");
+        FileUserRepo fur = new FileUserRepo();
+        System.out.println(fur.exists("Mihai"));
+        System.out.println(fur.exists("Hudy"));
+
+
     }
 
     public static void testSaveRoom(){
@@ -45,10 +59,16 @@ public class mainRepo {
 
     public static void main(String[] args) {
 
-        testSaveUser();
-        testFindUserByName();
+        //testSaveUser();
+        //testFindUserByName();
         //testUpdateUser();
+        //testUserExists();
         //testSaveRoom();
+
+        FileUserRepo fur = new FileUserRepo();
+        fur.save(new User("hudy","1234"));
+        fur.writeUserFile();
+
 
     }
 }
