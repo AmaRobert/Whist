@@ -1,66 +1,73 @@
 package Repos;
 
+import Exceptions.FileRepoException;
 import Interface.IRoomRepo;
 import domain.app.Room;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class FileRoomRepo implements IRoomRepo {
 
+    private List<Room> rooms;
+    private boolean availableKey[] = new boolean[1000];//de la 000 la 999
+
+    public FileRoomRepo() {
+        rooms = new LinkedList<>();
+        Arrays.fill(availableKey,true);
+    }
 
     @Override
-    public Room findByID(int roomID) {
-        Room foundRoom;
-        String[] split;
+    public Room findBy(int roomID) throws FileRepoException {
+        for(Room r: rooms){
+            if(r.getId() == roomID)
+                return r;
+        }
+        throw new FileRepoException("Room key doesn't exists!");
+    }
 
-        try{
-            File userFile = new File("Persistance\\src\\main\\resources\\txtFiles\\User.txt");
-            FileReader fr = new FileReader(userFile);
-            BufferedReader br = new BufferedReader(fr);
-
-            String line;
-            while((line = br.readLine()) != null){
-                if(line.contains(Integer.toString(roomID))) {       // grija mare cu asta ca e scris inainte sa fie gata clasa Room
-                    split = line.split("\\s");
-                    foundRoom = new Room( Boolean.getBoolean(split[0]) , split[1], split[2], Integer.parseInt(split[3]));
-                    //System.out.println(foundUser.getNickname() + " " + foundUser.getPassword());
-                    return foundRoom;
-                }
+    @Override
+    public void delete(int roomID) throws FileRepoException {
+        for(Room r:rooms){
+            if(r.getId() == roomID) {
+                rooms.remove(r);
+                availableKey[roomID] = true;
+                return;
             }
-        }catch (Exception e){
-            e.printStackTrace();
         }
-        return null;
+        throw new FileRepoException("Room key doesn't exists!");
     }
 
     @Override
-    public void delete(int roomID) {
+    public int save(Room room) throws FileRepoException {
+        int key = generateKey();
+        room.setId(key);
+        rooms.add(room);
+        availableKey[key] = false;
+        return key;
 
     }
 
-    @Override
-    public void save(Room room) {
-        try {
-            File userFile = new File("Persistance\\src\\main\\resources\\txtFiles\\Rooms.txt");
-            FileWriter fw = new FileWriter(userFile,true); // 'true'-ul face append
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            String line =  room.isPublic() + " " + room.getPort() + " " + room.getIPadress() + " " + room.getPassword() ;
-            bw.newLine();
-            bw.write(line);
-
-            bw.close();// super importatnt altfel nu scrie
-        }catch (Exception e){
-            e.printStackTrace();
+    private int generateKey() throws FileRepoException{
+        for(int i=0; i<availableKey.length; i++){
+            if(availableKey[i] == true){
+                return i;
+            }
         }
-
-
+        throw new FileRepoException("Can't create a room right now!Try again later");
     }
 
     @Override
-    public void update(int roomID) {
+    public void update(Room room) throws FileRepoException {
+        for(Room r : rooms){
+            if(r.getId().equals(room.getId())){
+               //folosind setteri, modificam elementul r(exemplu in clasa User)
+                return;
+            }
+        }
+        throw new FileRepoException("Can't find the room with key = " + room.getId());
 
     }
-
-
 }

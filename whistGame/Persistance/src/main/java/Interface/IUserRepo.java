@@ -1,14 +1,17 @@
 package Interface;
 
+import Exceptions.FileRepoException;
 import Exceptions.UserNotFoundException;
 import domain.app.User;
 
+import java.io.File;
+
 public interface IUserRepo {
 
-     User findByName(String userName) throws UserNotFoundException; // it should return and object
+     User findBy(String username,String password) throws FileRepoException;// it should return and object
 
-     void save(User user);
+     void save(User user) throws FileRepoException;
 
-     void update(User oldUser,User user); // oldUser, newUser? for parameters
+     void update(User user)throws FileRepoException; // oldUser, newUser? for parameters
      //delete eventual
 }

@@ -1,5 +1,6 @@
 package Repos;
 
+import Exceptions.FileRepoException;
 import Exceptions.UserNotFoundException;
 import Interface.IUserRepo;
 import domain.app.User;
@@ -22,6 +23,7 @@ public class FileUserRepo implements IUserRepo {
     public FileUserRepo(String path){
         this.setPath(path);
         this.setUsers(getAllUsers());
+
     }
 
     public FileUserRepo(){
@@ -32,18 +34,23 @@ public class FileUserRepo implements IUserRepo {
 //-----------------------------------------------
 
     @Override
-    public User findByName(String userName)  {
+    public User findBy(String username,String password) throws FileRepoException  {
         for (User u: users) {
-            if(u.getId() == userName){
+            if(u.getUsername().equals(username) && u.getPassword().equals(password) ){
                 return u;
             }
         }
-        return null;
+        throw new FileRepoException("User not found!");
     }
 
     @Override
-    public void save(User user) {// untested
+    public void save(User user)throws FileRepoException {// untested
+        if(users.contains(user))
+            throw new FileRepoException("User already exists!");
+
         users.add(user);
+
+
     }
 
     public void delete(User user) {// untested
@@ -93,11 +100,15 @@ public class FileUserRepo implements IUserRepo {
     }
 
     @Override// a nu se folosi dupa update nu crapa da' face cacaturi si nu-s sigur ce (Hudy)
-    public void update(User oldUser,User newUser) {
-       if(users.contains(oldUser)){
-            users.remove(oldUser);
-            users.add(newUser);
+    public void update(User user)throws FileRepoException {
+       for(User us : users){
+           if(us.getUsername().equals(user.getUsername())){
+               us.setPassword(user.getPassword());
+               us.setNickname(user.getNickname());
+               return;
+           }
        }
+       throw new FileRepoException("The user " + user.getUsername() + " can't be found!");
     }
 
     public  boolean exists(User user){

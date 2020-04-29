@@ -1,16 +1,17 @@
 package Interface;
 
 
+import Exceptions.FileRepoException;
 import domain.app.Room;
 
 public interface IRoomRepo {
 
-    Room findByID(int roomID);
+    Room findBy(int roomID) throws FileRepoException;
 
-    void delete(int roomID);
+    void delete(int roomID) throws FileRepoException;
 
-    void save(Room room);
+    int save(Room room) throws FileRepoException;
 
-    void update(int roomID);
+    void update(Room room)throws FileRepoException;
 
 }
