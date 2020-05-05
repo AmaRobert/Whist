@@ -1,4 +1,6 @@
+
 package domain.game;
+
 
 public class GameBoard // extends Entity<> {
 {
